@@ -256,4 +256,27 @@ print(informazioni)
 # person’s name and their favorite number. For even more fun, poll a few friends
 # and get some actual data for your program.
 
-numeri_preferiti: dict = {"lorenzo": 20, "luca": 12, "leonardo": 24}
+numeri_preferiti: dict = {"Lorenzo": 20, "Luca": 12, "Leonardo": 24, "Stefano": 34, "Federico": 7}
+print("il numero preferito di Lorenzo è: ", numeri_preferiti["Lorenzo"])
+print("il numero preferito di Luca è: ", numeri_preferiti["Luca"])
+print("il numero preferito di Leonardo è: ", numeri_preferiti["Leonardo"])
+print("il numero preferito di Stefano è: ", numeri_preferiti["Stefano"])
+print("il numero preferito di Federico è: ", numeri_preferiti["Federico"])
+
+# 6-3. Glossary: A Python dictionary can be used to model an actual dictionary.
+# However, to avoid confusion, let’s call it a glossary.
+# • Think of five programming words you’ve learned about in the previous chapters.
+# Use these words as the keys in your glossary, and store their meanings as values.
+# • Print each word and its meaning as neatly formatted output. You might print the
+# word followed by a colon and then its meaning, or print the word on one line and
+# then print its meaning indented on a second line. Use the newline character (\n)
+# to insert a blank line between each word-meaning pair in your output.
+
+parole: dict = {
+                
+                "variabile": "nome associato a un valore",
+                "cicli": "iterazione ripetuta di istruzioni",
+                "funzione": "pezzo di codice che esegue una determinata istruzione"
+                }
+print("Variabile", parole["variabile"])
+print("\n")
