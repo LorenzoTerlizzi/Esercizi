@@ -274,7 +274,7 @@ for u in username:
 
 username: list = []
 if not username:
-    pritn("We need to find some users!")
+    print("We need to find some users!")
 
 
 #5-10. Checking Usernames: Do the following to create a program that simulates how websites ensure
@@ -330,5 +330,4 @@ for num in numbers:
         print("8th")
     elif num == 9:
         print("9th")
-        
         
