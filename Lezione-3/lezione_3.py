@@ -330,14 +330,5 @@ for num in numbers:
         print("8th")
     elif num == 9:
         print("9th")
-
-    
-"""for number in numbers:
-	if number == 1:
-		print('1st')
-	elif number == 2:
-		print('2nd')
-	elif number == 3:
-		print('3rd')
-    elif number == 4:
-   """
+        
+        
