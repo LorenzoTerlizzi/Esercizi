@@ -94,13 +94,6 @@ def send_messages(text_message: list =["ciao", "hello", "hola"]):
 send_messages()
 
 
-# 8-11. Archived Messages: Start with your work from Exercise 8-10. Call the function send_messages() with
-# a copy of the list of messages. After calling the function, print both of your lists to show that
-# the original list has retained its messages.
-
-
-
-
 # 8-12. Sandwiches: Write a function that accepts a list of items a person wants on a sandwich. 
 # The function should have one parameter that collects as many items as the function call provides, 
 # and it should print a summary of the sandwich that’s being ordered.
