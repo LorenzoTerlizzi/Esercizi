@@ -149,7 +149,7 @@ print(naive_bubblue_sort())
 
 import time
 mylist: list = [i for i in range(1, 10001)]
-def naive_bubblue_sort_2(A: list = [4, 3, 7, 8, 2, 9, 1, 5]):
+def flag_bubblue_sort_2(A: list = [4, 3, 7, 8, 2, 9, 1, 5]):
     for i in range(len(A)):
         swap_flag = False
         for j in range(len(A) -1):
@@ -162,7 +162,7 @@ def naive_bubblue_sort_2(A: list = [4, 3, 7, 8, 2, 9, 1, 5]):
             return A
     return A
 start: float = time.time()
-print(naive_bubblue_sort_2(mylist))
+print(flag_bubblue_sort_2(mylist))
 print(time.time()- start)
 
 import time
