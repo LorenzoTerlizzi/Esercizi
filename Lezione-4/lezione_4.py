@@ -110,7 +110,7 @@ def sandwich(*args):
 # as parameters. The function then must return a string such as "Eric Crow, age 45, hair brown, weight 67"
 
 def build_profiler(first_name, last_name, age, color_hair, weight) -> str:
-    message: str = f"{first_name} {last_name}, age:{age}, color hair {color_hair}, weight:{weight}"
+    message: str = f"{first_name} {last_name}, age:{age}, color hair: {color_hair}, weight:{weight}"
     return message
 print(build_profiler("lorenzo", "ultimo", 18, "black", 70))
 
@@ -128,3 +128,48 @@ def make_car(manufacturer, model, color) -> dict:
     return car
 print(make_car("manufacturer", "model", "colol"))
 
+# 8-15. Printing Models: Put the functions for the example printing_models.py in a separate file called
+# printing_functions.py. Write an import statement at the top of printing_models.py, and modify
+# the file to use the imported functions.
+
+
+
+
+# Questa funzione impementa il bubble sort
+def naive_bubblue_sort(A: list = [4, 3, 7, 8, 2, 9, 1, 5]):
+    for i in range(len(A)):
+        for j in range(len(A) -1):
+            if A[j] > A[j+1]:
+                temp: int = A[j]
+                A[j] = A[j+1]
+                A[j+1] = temp
+    return A
+print(naive_bubblue_sort())
+
+
+import time
+mylist: list = [i for i in range(10000, 1, -1)]
+def naive_bubblue_sort_2(A: list = [4, 3, 7, 8, 2, 9, 1, 5] ):
+    for i in range(len(A)):
+        for j in range(len(A) -1):
+            if A[j] > A[j+1]:
+                temp: int = A[j]
+                A[j] = A[j+1]
+                A[j+1] = temp
+    return A
+start: float = time.time()
+print(naive_bubblue_sort_2(mylist))
+print(time.time()- start)
+
+import time
+def improved_bubblue_sort(A: list = [4, 3, 7, 8, 2, 9, 1, 5]):
+    for i in range(len(A)):
+        for j in range(len(A) -i -1):
+            if A[j] > A[j+1]:
+                temp: int = A[j]
+                A[j] = A[j+1]
+                A[j+1] = temp
+    return A
+start: float = time.time()
+print(improved_bubblue_sort())
+print(time.time()- start)
