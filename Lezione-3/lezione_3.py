@@ -36,8 +36,8 @@ for number in range(21):
 # a for loop to print the numbers. (If the output is taking too long, stop it by
 # pressing CTRL-C or by closing the output window.)
 num: list = range(1, 1000001)
-#for number in num:
-    #print(number)
+for number in num:
+    print(number)
 
 # 4-5. Summing a Million: Make a list of the numbers from one to one million, and
 # then use min() and max() to make sure your list actually starts at one and ends
@@ -87,7 +87,6 @@ print(num)
 num: list = [num for num in range(1, 11)]
 print("The first three items in the list are: ")
 for item in num[:3]:
-    #print("The first three items in the list are: ")
     print(item)
 print("The first three items in the list are: ")
 for item in num[4:7]:
@@ -127,13 +126,13 @@ print(f"My friend’s favorite pizzas are: {y}")
 #5-1. Conditional Tests: Write a series of conditional tests. Print a statement
 # describing each test and your prediction for the results of each test. Your code
 # should look something like this:
-"""car = input("Inserisci un'auto:")
+car = input("Inserisci un'auto:")
 if car == "subaru":
     print(car == "subaru")
 elif car == "audi":
     print (car == "audi")
 else:
-    print(False)"""
+    print(False)
 
 
 

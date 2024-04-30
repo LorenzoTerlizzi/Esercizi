@@ -247,8 +247,13 @@ lista: list = ["Laghi", "Cielo", "Mare"]
 # keys such as first_name, last_name, age, and city. Print each piece of information
 # stored in your dictionary.
 
-informazioni: dict = {"nome": "Luca", "cognome": "Scarsella", "età": 19, "città": "Milano"}
-print(informazioni)
+informazioni= dict(nome= "Luca", cognome= "Scarsella", età= "19", città= "Milano")
+nome: str= informazioni["nome"]
+cognome: str= informazioni["cognome"]
+età: int= informazioni["età"]
+città: str= informazioni["città"]
+messaggio: str = f"Ciao, sono {nome} {cognome}, ho {età} anni e sono nato a {città}"
+print(messaggio)
 
 # 6-2. Favorite Numbers: Use a dictionary to store people’s favorite numbers.
 # Think of five names, and use them as keys in your dictionary. Think of a favorite
@@ -256,7 +261,7 @@ print(informazioni)
 # person’s name and their favorite number. For even more fun, poll a few friends
 # and get some actual data for your program.
 
-numeri_preferiti: dict = {"Lorenzo": 20, "Luca": 12, "Leonardo": 24, "Stefano": 34, "Federico": 7}
+numeri_preferiti= dict(Lorenzo= "20", Luca= "12", Leonardo= "24", Stefano= "34", Federico= "7")
 print("il numero preferito di Lorenzo è: ", numeri_preferiti["Lorenzo"])
 print("il numero preferito di Luca è: ", numeri_preferiti["Luca"])
 print("il numero preferito di Leonardo è: ", numeri_preferiti["Leonardo"])
@@ -280,3 +285,74 @@ parole: dict = {
                 }
 print("Variabile", parole["variabile"])
 print("\n")
+
+# 6-7. People: Start with the program you wrote for Exercise 6-1. Make two new dictionaries
+# representing different people, and store all three dictionaries in a list called people.
+# Loop through your list of people. As you loop through the list, print everything you know
+# about each person.
+
+informazioni = dict(nome= "Luca", cognome= "Scarsella", età= "19", città= "Milano")
+informazioni1 = dict(nome = "Leonardo", cognome = "Brussani", età = 19, città = "Roma")
+informazioni2 = dict(nome = "Luca", cognome = "Rossi", età = 43, città = "Frosinone")
+
+persone: list = [informazioni, informazioni1, informazioni2]
+for i in range(len(persone)):
+    for k in persone[i]:
+        messaggio = f"{k}: \t {persone[i][k]}"
+        print(messaggio)
+
+
+# 6-8. Pets: Make several dictionaries, where each dictionary represents a different pet.
+# In each dictionary, include the kind of animal and the owner’s name. Store these dictionaries
+# in a list called pets. Next, loop through your list and as you do, print everything you
+# know about each pet. 
+animale: dict = {"tipo" : "Cane", "proprietario" : "Luca"}
+animale1: dict = {"tipo" : "Gatto", "proprietario" : "Lorenzo"}
+animale2: dict = {"tipo" : "criceto", "proprietario" : "Stefano"}
+animale3: dict = {"tipo" : "pappagallo", "proprietario" : "Andrea"}
+pets: list = [animale, animale1, animale2, animale3]
+for i in range(len(pets)):
+    for k in pets[i]:
+        messaggio = f"{k}: \t {pets[i][k]}"
+        print(messaggio)
+
+
+# 6-9. Favorite Places: Make a dictionary called favorite_places. Think of three names to use
+# as keys in the dictionary, and store one to three favorite places for each person. To make
+# this exercise a bit more interesting, ask some friends to name a few of their favorite places.
+# Loop through the dictionary, and print each person’s name and their favorite places.
+favorite_places: dict = {"Lorenzo" : ["roma", "new york", "milano"],
+                        "Alessio" : ["napoli", "perugia", "budapest"],
+                        "Stefano" : ["barcellona", "roma", "londra"]}
+for k in favorite_places:
+    print(f"{k}:")
+    for i in range(len(favorite_places[k])):
+        print(f"\t{favorite_places[k][i]}")
+
+
+# 6-10. Favorite Numbers: Modify your program from Exercise 6-2 so each person can have more
+# than one favorite number. Then print each person’s name along with their favorite numbers.
+numeri_preferiti= dict(Lorenzo= [20, 12], Luca= [12, 60, 46, 90], Leonardo= [24, 17, 24], Stefano= [34, 52, 7, 8], Federico= [7, 9, 15])
+print("il numero preferito di Lorenzo è: ", numeri_preferiti["Lorenzo"])
+print("il numero preferito di Luca è: ", numeri_preferiti["Luca"])
+print("il numero preferito di Leonardo è: ", numeri_preferiti["Leonardo"])
+print("il numero preferito di Stefano è: ", numeri_preferiti["Stefano"])
+print("il numero preferito di Federico è: ", numeri_preferiti["Federico"])
+
+
+# 6-11. Cities: Make a dictionary called cities. Use the names of three cities as keys in your
+# dictionary. Create a dictionary of information about each city and include the country that
+# the city is in, its approximate population, and one fact about that city.
+# The keys for each city’s dictionary should be something like country, population, and fact.
+# Print the name of each city and all of the information you have stored about it.
+Roma: dict = {"paese" : "Italia", "popolazione" : "2,873 millions"}
+New_York: dict = {"paese" : "Stati Uniti", "popolazione" : "8,336 millions"}
+Londra: dict = {"paese" : "Inghilterra", "popolazione" : "8,982 millions"}
+city: dict = {"Roma" : Roma, "New York" : New_York, "Londra" : Londra}
+for i in city:
+    print(i)
+    for k in city[i]:
+        messaggio = f"{k}: \t {city[i][k]}"
+        print(messaggio)
+
+

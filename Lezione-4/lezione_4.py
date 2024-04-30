@@ -22,7 +22,7 @@ favorite_book("harry potter")
 # should be printed on the shirt. The function should print a sentence summarizing the size of the
 # shirt and the message printed on it. Call the function once using positional arguments to make a shirt.
 # Call the function a second time using keyword arguments.
-def make_shirt(size, text_message) -> str:
+def make_shirt(size, text_message):
     print(f"the size is {size}, the message on the shirt is {text_message}")
 make_shirt("m", "wow")
 
@@ -30,8 +30,9 @@ make_shirt("m", "wow")
 # 8-4. Large Shirts: Modify the make_shirt() function so that shirts are large by default with a message
 # that reads I love Python. Make a large shirt and a medium shirt with the default message,
 # and a shirt of any size with a different message.
-
-
+def make_shirt(size: str = "L", text_message: str = "I love python"):
+    print(f"the size is {size}, the message on the shirt is {text_message}")
+make_shirt("m", "I love python")
 
 # 8-5. Cities: Write a function called describe_city() that accepts the name of a city and its country.
 # The function should print a simple sentence, such as Reykjavik is in Iceland. Give the parameter for the
