@@ -247,7 +247,7 @@ lista: list = ["Laghi", "Cielo", "Mare"]
 # keys such as first_name, last_name, age, and city. Print each piece of information
 # stored in your dictionary.
 
-informazioni= dict(nome= "Luca", cognome= "Scarsella", età= "19", città= "Milano")
+informazioni: dict = {"nome": "Luca", "cognome": "Scarsella", "età": 19, "città": "Milano"}
 nome: str= informazioni["nome"]
 cognome: str= informazioni["cognome"]
 età: int= informazioni["età"]
@@ -285,6 +285,7 @@ parole: dict = {
                 }
 print("Variabile", parole["variabile"])
 print("\n")
+
 
 # 6-7. People: Start with the program you wrote for Exercise 6-1. Make two new dictionaries
 # representing different people, and store all three dictionaries in a list called people.
@@ -354,5 +355,4 @@ for i in city:
     for k in city[i]:
         messaggio = f"{k}: \t {city[i][k]}"
         print(messaggio)
-
 
