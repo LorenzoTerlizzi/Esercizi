@@ -56,11 +56,37 @@ class Person:
         for a in range(len(vocali)):
             self._name = self._name.replace(vocali[a], "")
             self._surname = self._surname.replace(vocali[a], "")
+        day = self._birth_date[:2]
+        month = self._birth_date[3:5]
+        if month == "01":
+            month = "A"
+        elif month == "02":
+            month = "B"
+        elif month == "03":
+            month = "C"
+        elif month == "04":
+            month = "D"
+        elif month == "05":
+            month = "E"
+        elif month == "06":
+            month = "H"
+        elif month == "07":
+            month = "L"
+        elif month == "08":
+            month = "M"
+        elif month == "09":
+            month = "P"
+        elif month == "10":
+            month = "R"
+        elif month == "11":
+            month = "S"
+        elif month == "12":
+            month = "T"
         year = self._birth_date[-2:]
         first_three_name_char = self._surname[:3]
         last_three_name_char = self._name[0] + self._name[2] + self._name[3]
 
-        self._ssn = first_three_name_char.upper() + last_three_name_char.upper() + year
+        self._ssn = first_three_name_char.upper() + last_three_name_char.upper() + year + month + day + month
 
 person_1: Person = Person(name="Lorenzo", surname="Terlizzi", birth_date="30/06/2004", birth_place="Roma", gender="Male")
 person_2: Person = Person(name="Valentino", surname="Rossi", birth_date="12/02/2004", birth_place="Roma", gender="Male")
