@@ -95,7 +95,7 @@ print(str(person_1))
 print(str(person_2))
 
 print(person_1.get_ssn())
-queue: list [Person] = [person_1, person_2]
+
 
 
 
