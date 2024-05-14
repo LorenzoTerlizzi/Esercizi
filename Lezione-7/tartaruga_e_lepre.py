@@ -86,43 +86,72 @@ def Mossa_Lepre(i: int):
 
 posizioneTarta = 1
 posizioneLepre = 1
+tempo: list = ["soleggiato", "piovoso"]
 while posizioneTarta != 70 and posizioneLepre != 70:
         i: int = random.randint(1, 10)
+        t = random.choice(tempo)
         if Mossa_Tarta(i) == "Passo Veloce":
-           posizioneTarta = posizioneTarta + 3
-           if posizioneTarta > 70:
+            posizioneTarta = posizioneTarta + 3
+            if posizioneTarta > 70:
                posizioneTarta = 70
+            if t == "piovoso":
+                posizioneTarta = posizioneTarta - 1
+                #print("Piovoso: penalità")
         elif Mossa_Tarta(i) == "Scivolata":
-           posizioneTarta = posizioneTarta - 6
-           if posizioneTarta < 1:
+            posizioneTarta = posizioneTarta - 6
+            if posizioneTarta < 1:
                posizioneTarta = 1
+            if t == "piovoso":
+                posizioneTarta = posizioneTarta - 1
+                #print("Piovoso: penalità")
         elif Mossa_Tarta(i) == "Passo Lento":
             posizioneTarta = posizioneTarta + 1
             if posizioneTarta > 70:
                posizioneTarta = 70
+            if t == "piovoso":
+                posizioneTarta = posizioneTarta - 1
+                #print("Piovoso: penalità")
         
 
         if Mossa_Lepre(i) == "Riposo":
             posizioneLepre = posizioneLepre
+            if t == "piovoso":
+                posizioneLepre = posizioneLepre - 1
+                #print("Piovoso: penalità")
         elif Mossa_Lepre(i) == "Grande Balzo":
             posizioneLepre = posizioneLepre + 9
             if posizioneLepre > 70:
                posizioneLepre = 70
+            if t == "piovoso":
+                posizioneLepre = posizioneLepre - 1
+                #print("Piovoso: penalità")
         elif Mossa_Lepre(i) == "Grande Scivolata":
             posizioneLepre = posizioneLepre - 12
             if posizioneLepre < 1:
                posizioneLepre = 1
+            if t == "piovoso":
+                posizioneLepre = posizioneLepre - 1
+                #print("Piovoso: penalità")
         elif Mossa_Lepre(i) == "Piccolo Balzo":
             posizioneLepre = posizioneLepre + 1
             if posizioneLepre > 70:
                posizioneLepre = 70
+            if t == "piovoso":
+                posizioneLepre = posizioneLepre - 1
+                #print("Piovoso: penalità")
         elif Mossa_Lepre(i) == "Piccola Scivolata":
             posizioneLepre = posizioneLepre - 2
             if posizioneLepre < 1:
                posizioneLepre = 1
+            if t == "piovoso":
+                posizioneLepre = posizioneLepre - 1
+                #print("Piovoso: penalità")
         
-        print("Tartaruga: ", Mossa_Tarta(i), posizioneTarta)
-        print("Lepre: ", Mossa_Lepre(i), posizioneLepre)
+        #print("Tartaruga: ", Mossa_Tarta(i), posizioneTarta)
+        #print("Lepre: ", Mossa_Lepre(i), posizioneLepre)
+        if t == "piovoso":
+            print("Tartaruga: ", Mossa_Tarta(i), posizioneTarta, "\n" "Piovoso: Penalità -1") 
+            print("Lepre: ", Mossa_Lepre(i), posizioneLepre, "\n" "Piovoso: penalità -2")
 
         print(Posizioni_gara(posizioneTarta, posizioneLepre))
 if posizioneTarta == 70:
