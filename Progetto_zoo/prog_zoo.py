@@ -1,27 +1,22 @@
-class Zoo:
-    def __init__(self, fences: str, zoo_keepers: str):
-        self.fences = fences
-        self.zoo_keepers = zoo_keepers
-    
 class Animal:
     def __init__(self, name: str, species: str, age: int, 
-                 height: float, width: float, preferred_habitat: str, healt: float, area_animal: float):
+                 height: float, width: float, preferred_habitat: str):
         self.name = name
         self.species = species
         self.age = age
         self.height = height
         self.width = width
         self.preferred_habitat = preferred_habitat
-        self.healt = round(100*(1/age), 3)
+        self.healt = round(100*(1/age))
         self.area_animal = height * width
 
 
 class Fence:
-    def __init__(self, area: float, temperature: float, habitat: str, lista: list):
+    def __init__(self, area: float, temperature: float, habitat: str):
         self.area = area
         self.tempareture = temperature
         self.habitat = habitat
-        self.lista = lista
+         
 
 class ZooKepper:
     def __init__(self, name: str, surname: str, id: int):
@@ -49,6 +44,11 @@ class ZooKepper:
         self.fence = Fence
         
 
+class Zoo:
+    def __init__(self, name: str):
+        self.name = name
+        self.fences = [Fence]
+        self.zoo_keepers = [ZooKepper]
 
 
 
