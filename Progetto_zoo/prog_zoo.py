@@ -9,7 +9,7 @@ class Animal:
         self.preferred_habitat = preferred_habitat
         self.healt = round(100*(1/age))
         self.area_animal = height * width
-
+        self.fence = Fence
 
 class Fence:
     def __init__(self, area: float, temperature: float, habitat: str):
@@ -38,7 +38,7 @@ class ZooKepper:
         self.animal = [Animal]
         healt = healt + (healt/100)
         height = height + ((height*2)/100)
-        width = width + + ((width*2)/100)
+        width = width + ((width*2)/100)
 
     def clean(self, fence: Fence) -> float:
         self.fence = Fence
