@@ -117,3 +117,9 @@ for value in aggr.values():
 
 for key in aggr.keys():
     print(key)
+
+
+a: list = [1, 2]
+b: tuple = (1, 2)
+a[0] = 3
+b[0] = 3 # da errore perchè le tuple non sono modificabili
