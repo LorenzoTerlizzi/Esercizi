@@ -9,13 +9,15 @@ class Animal:
         self.preferred_habitat = preferred_habitat
         self.healt = round(100*(1/age))
         self.area_animal = height * width
-        self.fence = Fence
+        self.fence = None
+        
 
 class Fence:
     def __init__(self, area: float, temperature: float, habitat: str):
         self.area = area
-        self.tempareture = temperature
+        self.temperature = temperature
         self.habitat = habitat
+        self.animals: list[Animal] = []
          
 
 class ZooKepper:
@@ -25,23 +27,22 @@ class ZooKepper:
         self.id = id
 
     def add_animal(self, animal: Animal, fence: Fence):
-        self.animal = [Animal]
         if animal.preferred_habitat == fence.habitat:
             if fence.area > animal.area_animal:
                 fence.append(animal)
 
     def remove_animal(self, animal: Animal, fence: Fence):
-        self.animal = [Animal]
-        fence.remove(animal)
+        if animal in fence.animals:
+            fence.animals.remove(animal)
 
     def feed(self, animal: Animal):
-        self.animal = [Animal]
-        healt = healt + (healt/100)
-        height = height + ((height*2)/100)
-        width = width + ((width*2)/100)
+        
+        animal.healt += (animal.healt*0.01)
+        animal.height += (animal.height*0.02)
+        animal.width += (animal.width*0.02)
 
     def clean(self, fence: Fence) -> float:
-        self.fence = Fence
+        pass
         
 
 class Zoo:
@@ -50,5 +51,17 @@ class Zoo:
         self.fences = [Fence]
         self.zoo_keepers = [ZooKepper]
 
-
+    def describe_zoo(self) -> None:
+        print(f"Name: {self.name}")
+        print(f"Zoo Keepers: \n")
+        for a in self.zoo_keepers:
+            print(f"Name: {a.name}, Surname: {a.surname}, Id: {a.id} \n")
+        print("Fence: \n")
+        for b in self.fences:
+            print(f"Fence (area: {b.area}, temperature: {b.temperature}, habitat: {b.habitat})\n")
+            print("Animals: \n")
+            for c in b.animals:
+                print(f"Animal (name: {c.name}, species: {c.species}, age: {c.age})\n")
+            print("#" * 30)
+            print("")
 
