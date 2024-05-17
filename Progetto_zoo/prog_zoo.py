@@ -114,20 +114,3 @@ class Zoo:
 
 
 
-zoo = Zoo("My Zoo")
-keeper = ZooKeeper("John", "Doe", 1)
-fence = Fence(100.0, 25.0, "Savannah")
-animal = Animal("Leo", "Lion", 5, 1.2, 2.5, "Savannah")
-
-# Aggiunta del keeper e del recinto allo zoo
-zoo.zoo_keepers.append(keeper)
-zoo.fences.append(fence)
-
-# Aggiunta dell'animale al recinto
-keeper.add_animal(animal, fence)
-
-# Descrizione dello zoo
-zoo.describe_zoo()
-
-# Alimentazione dell'animale
-keeper.feed(animal)
