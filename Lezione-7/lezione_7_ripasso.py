@@ -80,3 +80,88 @@ def Es_6(sequenza:  str):
          
 sequenza: str = "Practice makes perfect"
 print(Es_6(sequenza))
+
+def integerPower(base: int, esponente: int):
+    numero: int = 1
+    if isinstance(base, int) and isinstance(esponente, int) > 0:
+        for _ in range(esponente):
+            numero *= base
+    return numero
+print(integerPower(2, 4))
+
+# Esercizi di ripasso compito moodle
+# Es 2
+def transform(x: int) -> int:
+    # cancella pass e scrivi il tuo codice
+    if x % 2 == 0:
+        x = x / 2
+    elif x % 2 != 0:
+        x = (x * 3) - 1
+
+    return x
+
+# Es 3
+def calcola_stipendio(ore_lavorate: int) -> float:
+    # cancella pass e scrivi il tuo codice
+    
+    stipendio: float = 0
+    ore_extra = 0
+    if ore_lavorate <= 40:
+        stipendio = 10 * ore_lavorate
+    elif ore_lavorate > 40:
+        ore_extra = ore_lavorate - 40
+        ore_standard: int = ore_lavorate - ore_extra
+        stipendio = ore_standard * 10 + ore_extra * (10 * 1.5)
+    return stipendio
+# Es 4
+def print_seq(): 
+    
+    print("Sequenza a):")
+    # SCRIVI QUI IL TUO CICLO
+    lista: list = range(1, 8)
+    for a in lista:
+        print(a)
+
+    print("\nSequenza b):")
+    # SCRIVI QUI IL TUO CICLO
+    lista: list = [3, 8, 13, 18, 23]
+    for b in lista:
+        print(b)
+
+    print("\nSequenza c):")
+    # SCRIVI QUI IL TUO CICLO
+    lista: list = [20, 14, 8, 2, -4, -10]
+    for c in lista:
+        print(c)
+
+    print("\nSequenza d):")
+    # SCRIVI QUI IL TUO CICLO
+    lista: list = [19, 27, 35, 43, 51]
+    for d in lista:
+        print(d)
+    
+    return
+# Es 5
+def integerPower(base: int, esponente: int):
+    numero: int = 1
+    if isinstance(base, int) and isinstance(esponente, int) > 0:
+        for _ in range(esponente):
+            numero *= base
+    return numero
+# Es 6
+def hypotenuse(cateto_1: float, cateto_2: float) -> float:
+    import math
+    ipotenusa: float = 0.0
+    ipotenusa = (cateto_1**2) + (cateto_2**2)
+    return ipotenusa**(1/2)
+    
+# Es 7
+def sum_above_threshold(numbers: list[int], num: int) -> int:
+    # prima cancella ... e definisci parametro e tipo per il dato mancante
+    # successivamente cancella pass e scrivi il tuo codice
+    numero = 0
+    for a in numbers:
+        if a > num:
+            numero += a
+
+    return numero

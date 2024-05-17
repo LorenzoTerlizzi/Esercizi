@@ -10,7 +10,7 @@ class Animal:
         self.healt = round(100*(1/age))
         self.area_animal = height * width
         self.fence = None
-        
+
 
 class Fence:
     def __init__(self, area: float, temperature: float, habitat: str):
@@ -29,7 +29,7 @@ class ZooKepper:
     def add_animal(self, animal: Animal, fence: Fence):
         if animal.preferred_habitat == fence.habitat:
             if fence.area > animal.area_animal:
-                fence.append(animal)
+                fence.animals.append(animal)
 
     def remove_animal(self, animal: Animal, fence: Fence):
         if animal in fence.animals:
@@ -50,6 +50,7 @@ class Zoo:
         self.name = name
         self.fences = [Fence]
         self.zoo_keepers = [ZooKepper]
+        self.animals = [Animal]
 
     def describe_zoo(self) -> None:
         print(f"Name: {self.name}")
