@@ -356,3 +356,5 @@ for i in city:
         messaggio = f"{k}: \t {city[i][k]}"
         print(messaggio)
 
+
+
