@@ -89,6 +89,7 @@ posizioneLepre: int = 1
 tempo: list = ["soleggiato", "piovoso"]
 energiaTarta: int = 100
 energiaLepre: int = 100
+
 while posizioneTarta != 70 and posizioneLepre != 70:
         i: int = random.randint(1, 10)
         t = random.choice(tempo)
@@ -121,11 +122,17 @@ while posizioneTarta != 70 and posizioneLepre != 70:
 
         if Mossa_Lepre(i) == "Riposo":
             posizioneLepre = posizioneLepre
+            if energiaLepre < 100:
+                energiaLepre += 10
+            else:
+                energiaLepre == energiaLepre
+
             if t == "piovoso":
                 posizioneLepre = posizioneLepre - 1
                 
         elif Mossa_Lepre(i) == "Grande Balzo":
             posizioneLepre = posizioneLepre + 9
+            energiaLepre -= 15
             if posizioneLepre > 70:
                posizioneLepre = 70
             if t == "piovoso":
@@ -133,6 +140,7 @@ while posizioneTarta != 70 and posizioneLepre != 70:
                 
         elif Mossa_Lepre(i) == "Grande Scivolata":
             posizioneLepre = posizioneLepre - 12
+            energiaLepre -= 20
             if posizioneLepre < 1:
                posizioneLepre = 1
             if t == "piovoso":
@@ -140,6 +148,7 @@ while posizioneTarta != 70 and posizioneLepre != 70:
                 
         elif Mossa_Lepre(i) == "Piccolo Balzo":
             posizioneLepre = posizioneLepre + 1
+            energiaLepre -= 5
             if posizioneLepre > 70:
                posizioneLepre = 70
             if t == "piovoso":
@@ -147,6 +156,7 @@ while posizioneTarta != 70 and posizioneLepre != 70:
                 
         elif Mossa_Lepre(i) == "Piccola Scivolata":
             posizioneLepre = posizioneLepre - 2
+            energiaLepre -= 8
             if posizioneLepre < 1:
                posizioneLepre = 1
             if t == "piovoso":
