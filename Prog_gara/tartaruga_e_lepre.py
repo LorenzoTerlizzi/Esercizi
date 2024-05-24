@@ -94,30 +94,45 @@ while posizioneTarta != 70 and posizioneLepre != 70:
         i: int = random.randint(1, 10)
         t = random.choice(tempo)
         if Mossa_Tarta(i) == "Passo Veloce":
-            posizioneTarta = posizioneTarta + 3
-            energiaTarta -= 5
-            
-            if posizioneTarta > 70:
-               posizioneTarta = 70
-            if t == "piovoso":
-                posizioneTarta = posizioneTarta - 1
-                    
+            if energiaTarta > 10:
+                posizioneTarta = posizioneTarta + 3
+                energiaTarta -= 5
+                if energiaTarta < 0:
+                    energiaTarta = 0
+                if posizioneTarta > 70:
+                    posizioneTarta = 70
+                if t == "piovoso":
+                    posizioneTarta = posizioneTarta - 1
+            else:
+                energiaTarta += 10
+                print("Mancanza di energia per muoversi \n Energia = +10")       
         elif Mossa_Tarta(i) == "Scivolata":
-            posizioneTarta = posizioneTarta - 6
-            energiaTarta -= 10
-            if posizioneTarta < 1:
-               posizioneTarta = 1
-            if t == "piovoso":
-                posizioneTarta = posizioneTarta - 1
-                
+            if energiaTarta > 10:
+                posizioneTarta = posizioneTarta - 6
+                energiaTarta -= 10
+                if energiaTarta < 0:
+                    energiaTarta = 0
+            
+                if posizioneTarta < 1:
+                    posizioneTarta = 1
+                if t == "piovoso":
+                    posizioneTarta = posizioneTarta - 1
+            else:
+                energiaTarta += 10
+                print("Mancanza di energia per muoversi \n Energia = +10")    
         elif Mossa_Tarta(i) == "Passo Lento":
-            posizioneTarta = posizioneTarta + 1
-            energiaTarta -= 3
-            if posizioneTarta > 70:
-               posizioneTarta = 70
-            if t == "piovoso":
-                posizioneTarta = posizioneTarta - 1
-                
+            if energiaTarta > 10:
+                posizioneTarta = posizioneTarta + 1
+                energiaTarta -= 3
+                if energiaTarta < 0:
+                    energiaTarta = 0
+                if posizioneTarta > 70:
+                    posizioneTarta = 70
+                if t == "piovoso":
+                    posizioneTarta = posizioneTarta - 1
+            else:
+                energiaTarta += 10
+                print("Mancanza di energia per muoversi \n Energia = +10")     
         
 
         if Mossa_Lepre(i) == "Riposo":
@@ -133,6 +148,8 @@ while posizioneTarta != 70 and posizioneLepre != 70:
         elif Mossa_Lepre(i) == "Grande Balzo":
             posizioneLepre = posizioneLepre + 9
             energiaLepre -= 15
+            if energiaLepre < 0:
+                energiaLepre = 0
             if posizioneLepre > 70:
                posizioneLepre = 70
             if t == "piovoso":
@@ -141,6 +158,8 @@ while posizioneTarta != 70 and posizioneLepre != 70:
         elif Mossa_Lepre(i) == "Grande Scivolata":
             posizioneLepre = posizioneLepre - 12
             energiaLepre -= 20
+            if energiaLepre < 0:
+                energiaLepre = 0
             if posizioneLepre < 1:
                posizioneLepre = 1
             if t == "piovoso":
@@ -149,6 +168,8 @@ while posizioneTarta != 70 and posizioneLepre != 70:
         elif Mossa_Lepre(i) == "Piccolo Balzo":
             posizioneLepre = posizioneLepre + 1
             energiaLepre -= 5
+            if energiaLepre < 0:
+                energiaLepre = 0
             if posizioneLepre > 70:
                posizioneLepre = 70
             if t == "piovoso":
@@ -157,6 +178,8 @@ while posizioneTarta != 70 and posizioneLepre != 70:
         elif Mossa_Lepre(i) == "Piccola Scivolata":
             posizioneLepre = posizioneLepre - 2
             energiaLepre -= 8
+            if energiaLepre < 0:
+                energiaLepre = 0
             if posizioneLepre < 1:
                posizioneLepre = 1
             if t == "piovoso":

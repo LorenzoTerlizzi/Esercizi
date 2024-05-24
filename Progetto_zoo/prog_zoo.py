@@ -29,7 +29,7 @@ Funzionalità:
 class Animal:
     def __init__(self, name_animal: str, species: str, age: int, 
                  height: float, width: float, preferred_habitat: str):
-        self.name = name_animal
+        self.name_animal = name_animal
         self.species = species
         self.age = age
         self.height = height
