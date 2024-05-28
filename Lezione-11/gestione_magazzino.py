@@ -15,4 +15,23 @@ class Magazzino:
             if name in a.nome:
                 return name
             
-    
+    def verifica_disponibilità(self, nome: str):
+        for prodotto in self.prodotti:
+            if prodotto.nome == nome:
+                return f"{prodotto.nome} disponibile"
+        return f"{prodotto.nome} non disponibile"
+
+
+prodotto1: Prodotto = Prodotto("Pizza", 2)
+prodotto2: Prodotto = Prodotto("Pasta", 5)
+prodotti: Magazzino = Magazzino()
+
+prodotti.aggiungi_prodotto(prodotto1)
+prodotti.aggiungi_prodotto(prodotto2)
+
+
+print(prodotti.cerca_prodotto("Pizza"))
+print(prodotti.verifica_disponibilità("Pizza"))
+print("\n")
+print(prodotti.cerca_prodotto("Pasta"))
+print(prodotti.verifica_disponibilità("Pasta"))

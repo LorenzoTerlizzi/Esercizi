@@ -89,6 +89,18 @@ posizioneLepre: int = 1
 tempo: list = ["soleggiato", "piovoso"]
 energiaTarta: int = 100
 energiaLepre: int = 100
+ostacoli: dict = {
+        11 : 2,
+        27 : 5,
+        30 : 1,
+        58 : 8
+    } 
+bonus: dict ={
+        5 : 2,
+        15 : 5,
+        25 : 8,
+        40 : 6
+    }
 
 while posizioneTarta != 70 and posizioneLepre != 70:
         i: int = random.randint(1, 10)
@@ -132,7 +144,23 @@ while posizioneTarta != 70 and posizioneLepre != 70:
                     posizioneTarta = posizioneTarta - 1
             else:
                 energiaTarta += 10
-                print("Mancanza di energia per muoversi \n Energia = +10")     
+                print("Mancanza di energia per muoversi \n Energia = +10")
+
+        if posizioneTarta in ostacoli:
+            if posizioneTarta >= ostacoli[posizioneTarta]:
+                print(f"Tartaruga penalità in ostacolo: {posizioneTarta}")
+                posizioneTarta -= ostacoli[posizioneTarta]
+            else:
+                posizioneTarta = 0
+                print("Tartaruga penalità, posizione tornata a 0")  
+
+        if posizioneTarta in bonus:
+            if posizioneTarta >= bonus[posizioneTarta]:
+                print(f"T bonus in posizione: {posizioneTarta}")
+                posizioneTarta += bonus[posizioneTarta]
+            if posizioneTarta > 70:
+                posizioneTarta == 70       
+        print(posizioneTarta)     
         
 
         if Mossa_Lepre(i) == "Riposo":
@@ -184,6 +212,23 @@ while posizioneTarta != 70 and posizioneLepre != 70:
                posizioneLepre = 1
             if t == "piovoso":
                 posizioneLepre = posizioneLepre - 1
+
+        if posizioneLepre in ostacoli:
+            if posizioneLepre >= ostacoli[posizioneLepre]:
+                print(f"T penalità in ostacolo: {posizioneLepre}")
+                posizioneLepre -= ostacoli[posizioneLepre]
+            else:
+                posizioneLepre = 0
+                print("T penalità, posizione tornata a 0")  
+
+    
+        if posizioneLepre in bonus:
+            if posizioneLepre >= bonus[posizioneLepre]:
+                print(f"T bonus in posizione: {posizioneLepre}")
+                posizioneLepre += bonus[posizioneLepre]
+            if posizioneLepre > 70:
+                posizioneLepre == 70       
+        print(posizioneLepre)
                 
         if t == "piovoso":
             print("Tartaruga: ", Mossa_Tarta(i), posizioneTarta, "energia Tartaruga: ", energiaTarta, "\n" "Piovoso: Penalità -1") 
