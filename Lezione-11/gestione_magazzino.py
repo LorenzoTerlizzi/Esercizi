@@ -13,7 +13,7 @@ class Magazzino:
     def cerca_prodotto(self, name: str):
         for a in self.prodotti:
             if name in a.nome:
-                return name
+                return f"{name} trovato"
             
     def verifica_disponibilità(self, nome: str):
         for prodotto in self.prodotti:
@@ -22,16 +22,15 @@ class Magazzino:
         return f"{prodotto.nome} non disponibile"
 
 
-prodotto1: Prodotto = Prodotto("Pizza", 2)
-prodotto2: Prodotto = Prodotto("Pasta", 5)
+prodotto1: Prodotto = Prodotto("Acqua", 5)
+prodotto2: Prodotto = Prodotto("Tè", 3)
 prodotti: Magazzino = Magazzino()
 
 prodotti.aggiungi_prodotto(prodotto1)
-prodotti.aggiungi_prodotto(prodotto2)
+prodotti.aggiungi_prodotto(prodotto2)   
 
-
-print(prodotti.cerca_prodotto("Pizza"))
-print(prodotti.verifica_disponibilità("Pizza"))
+print(prodotti.cerca_prodotto("Acqua"))
+print(prodotti.verifica_disponibilità("Acqua"))
 print("\n")
-print(prodotti.cerca_prodotto("Pasta"))
-print(prodotti.verifica_disponibilità("Pasta"))
+print(prodotti.cerca_prodotto("Tè"))
+print(prodotti.verifica_disponibilità("Tè"))

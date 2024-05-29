@@ -50,6 +50,8 @@ import random
 def Posizioni_gara(posizioneTarta: int, posizioneLepre: int):
     lunghezza_lista = 70
     percorso: list[int] = ["_"] * lunghezza_lista
+    posizioneTarta = min(posizioneTarta, lunghezza_lista)
+    posizioneLepre = min(posizioneLepre, lunghezza_lista)
     percorso[posizioneTarta-1] = "T"
     percorso[posizioneLepre-1] = "H"
     if posizioneTarta == posizioneLepre:
@@ -89,18 +91,8 @@ posizioneLepre: int = 1
 tempo: list = ["soleggiato", "piovoso"]
 energiaTarta: int = 100
 energiaLepre: int = 100
-ostacoli: dict = {
-        11 : 2,
-        27 : 5,
-        30 : 1,
-        58 : 8
-    } 
-bonus: dict ={
-        5 : 2,
-        15 : 5,
-        25 : 8,
-        40 : 6
-    }
+ostacoli: dict = {11 : 2, 27 : 5, 30 : 1, 58 : 8} 
+bonus: dict ={5 : 2, 15 : 5, 25 : 8, 40 : 6}
 
 while posizioneTarta != 70 and posizioneLepre != 70:
         i: int = random.randint(1, 10)
