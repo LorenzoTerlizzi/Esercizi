@@ -35,10 +35,36 @@ class MovieCatalog:
             self.catalog = {director_name, self.lista}
         print(self.catalog)
 
-    #def remove_movie(self, director_name: str, movie_name:str):
+    def remove_movie(self, director_name: str, movie_name:str):
+        if director_name in self.catalog:
+            if movie_name in self.catalog[director_name]:
+                self.catalog[director_name].remove(movie_name)
+    
+    def list_directors(self):
+        for director in self.catalog:
+            print("director:", director)
+
+    def get_movies_by_director(self, director_name: str):
+        if director_name in self.catalog:
+            return self.catalog[director_name]
+        else:
+            return "Regista non trovato"
+        
+    def search_movies_by_title(self, title: str):
+        elenco: list = []
+        for director in self.catalog:
+            film: list [str] = self.catalog[director] 
+            for movie in film:
+                if title == movie:
+                    elenco.append(movie)
+                if elenco:
+                    return elenco
 
 
 moviecatalog: MovieCatalog = MovieCatalog()
 moviecatalog.add_movie("regista1", ["film1"])
 moviecatalog.add_movie("regista4", ["film4"])
 moviecatalog.add_movie("regista4", ["film4bis"])
+moviecatalog.list_directors()
+moviecatalog.get_movies_by_director("regista1")
+moviecatalog.search_movies_by_title("film1")
