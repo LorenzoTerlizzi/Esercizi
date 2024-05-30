@@ -38,17 +38,17 @@ class Biblioteca:
     def presta_libro(self, titolo: str):
         for i in self.libri:
             if titolo == i.titolo and i.stato_prestito == True:
-                print("Libro disponibile")
+                return f"{titolo}: Libro disponibile"
             else:
-                print("Libro non disponibile")
+                return f"{titolo}:Libro non disponibile"
                 break
 
     def restituisci_libro(self, titolo):
         for i in self.libri:
             if titolo == i.titolo and i.stato_prestito == False:
-                print("Libro disponibile")
+                return f"{titolo}:Libro disponibile"
             else:
-                print("Libro non disponibile")
+                return f"{titolo}:Libro non disponibile"
                 break    
 
     def mostra_libri_disponibili(self):
