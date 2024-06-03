@@ -24,25 +24,28 @@
 
 class MovieCatalog:
     def __init__(self):
-        self.lista: list = []
-        self.catalog = {}#{"regista1": "film1", "regista2":"film2", "regista3": "film3"}
+        self.catalog: dict[str, list[str]] = {}#{"regista1": "film1", "regista2":"film2", "regista3": "film3"}
 
 
-    def add_movie(self, director_name: str, movies: str):
-        self.lista.append(movies)
-        self.catalog[director_name] = self.lista
+    def add_movie(self, director_name: str, movies: list[str]):
         if director_name not in self.catalog:
-            self.catalog = {director_name, self.lista}
-        print(self.catalog)
+            self.catalog[director_name] = movies
+        else:
+            for movie in movies:
+                if movie not in self.catalog[director_name]:
+                    self.catalog[director_name].append(movie)
+        return {director_name: self.catalog[director_name]}
 
     def remove_movie(self, director_name: str, movie_name:str):
-        if director_name in self.catalog:
-            if movie_name in self.catalog[director_name]:
-                self.catalog[director_name].remove(movie_name)
+        if director_name in self.catalog and movie_name in self.catalog[director_name]:
+            self.catalog[director_name].remove(movie_name)
+            if not self.catalog[director_name]:
+                del self.catalog[director_name]
+        return self.catalog
     
     def list_directors(self):
-        for director in self.catalog:
-            print("director:", director)
+    
+        return list(self.catalog.keys())
 
     def get_movies_by_director(self, director_name: str):
         if director_name in self.catalog:
@@ -62,9 +65,9 @@ class MovieCatalog:
 
 
 moviecatalog: MovieCatalog = MovieCatalog()
-moviecatalog.add_movie("regista1", ["film1"])
+moviecatalog.add_movie("regista1", ["film1", "film2", "film3"])
 moviecatalog.add_movie("regista4", ["film4"])
 moviecatalog.add_movie("regista4", ["film4bis"])
-moviecatalog.list_directors()
-moviecatalog.get_movies_by_director("regista1")
-moviecatalog.search_movies_by_title("film1")
+print(moviecatalog.list_directors())
+print(moviecatalog.get_movies_by_director("regista1"))
+print(moviecatalog.search_movies_by_title("film1"))

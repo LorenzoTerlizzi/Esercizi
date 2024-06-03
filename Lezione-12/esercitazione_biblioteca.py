@@ -20,7 +20,7 @@
 # - mostra_libri_disponibili(): Restituisce una lista dei titoli dei libri attualmente disponibili. Se non ci sono libri disponibili, restituisce un messaggio di errore.
 
 class Libro:
-    def __init__(self, titolo: str, autore: str, stato_prestito: bool = True):
+    def __init__(self, titolo: str, autore: str, stato_prestito: bool = False):
         self.titolo = titolo
         self.autore = autore
         self.stato_prestito: bool = stato_prestito
@@ -37,7 +37,7 @@ class Biblioteca:
 
     def presta_libro(self, titolo: str):
         for i in self.libri:
-            if titolo == i.titolo and i.stato_prestito == True:
+            if titolo == i.titolo and i.stato_prestito == False:
                 return f"{titolo}: Libro disponibile"
             else:
                 return f"{titolo}:Libro non disponibile"
@@ -45,7 +45,7 @@ class Biblioteca:
 
     def restituisci_libro(self, titolo):
         for i in self.libri:
-            if titolo == i.titolo and i.stato_prestito == False:
+            if titolo == i.titolo and i.stato_prestito == True:
                 return f"{titolo}:Libro disponibile"
             else:
                 return f"{titolo}:Libro non disponibile"
@@ -53,8 +53,8 @@ class Biblioteca:
 
     def mostra_libri_disponibili(self):
         for i in self.libri:
-            if i.stato_prestito == True:
-                print(self.libri(i.stato_prestito == True))
+            if i.stato_prestito == False:
+                print(self.libri(i.stato_prestito == False))
 
 libro1: Libro = Libro("libro1", "Io", )
 libro2: Libro = Libro("libro2", "Tu", False)
