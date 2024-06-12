@@ -60,22 +60,22 @@ class TestDottore(unittest.TesctCase):
 """
 class TestPersona(unittest.TestCase):
     def setUp(self):
-        self.persona = Persona("Mario", "Rossi")
+        self.persona = Persona("Anna", "Rossi")
 
     def test_initialization(self):
-        self.assertEqual(self.persona.getName(), "Mario")
+        self.assertEqual(self.persona.getName(), "Anna")
         self.assertEqual(self.persona.getLastName(), "Rossi")
         self.assertEqual(self.persona.getAge(), 31)
 
     def test_setName(self):
-        self.persona.setName("Luigi")
-        self.assertEqual(self.persona.getName(), "Luigi")
+        self.persona.setName("Anna")
+        self.assertEqual(self.persona.getName(), "Anna")
         self.persona.setName(123)
         self.assertIsNone(self.persona.getName())
 
     def test_setLastName(self):
-        self.persona.setLastName("Verdi")
-        self.assertEqual(self.persona.getLastName(), "Verdi")
+        self.persona.setLastName("Bianchi")
+        self.assertEqual(self.persona.getLastName(), "Bianchi")
         self.persona.setLastName(456)
         self.assertIsNone(self.persona.getLastName())
 
@@ -103,7 +103,7 @@ class TestDottore(unittest.TestCase):
 
 class TestPaziente(unittest.TestCase):
     def setUp(self):
-        self.paziente = Paziente("Luca", "Neri", 30, "PZ123")
+        self.paziente = Paziente("Luca", "Neri", "PZ123")
 
     def test_initialization(self):
         self.assertEqual(self.paziente.getName(), "Luca")

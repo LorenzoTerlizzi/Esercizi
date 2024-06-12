@@ -35,7 +35,7 @@
 from persona import Persona
 class Dottore(Persona):
     def __init__(self, first_name, last_name, specialization: str, parcel: float):
-        Persona.__init__(first_name, last_name)
+        super().__init__(first_name, last_name)
         self.specialization = specialization
         self.parcel = parcel
         if not isinstance(specialization, str):

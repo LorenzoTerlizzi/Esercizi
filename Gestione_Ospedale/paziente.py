@@ -15,7 +15,7 @@
 from persona import Persona
 class Paziente(Persona):
     def __init__(self, first_name, last_name, id_code: str):
-        Persona.__init__(first_name, last_name)
+        super().__init__(first_name, last_name)
         self.id_code = id_code
 
     def setIdCode(self, idCode):

@@ -27,8 +27,8 @@ from dottore import Dottore
 from paziente import Paziente
 class Fattura(Dottore, Paziente):
     def __init__(self, specialization, parcel, id_code, doctor: Dottore, patient = [Paziente]):
-        Dottore.__init__(specialization, parcel)
-        Paziente.__init__(id_code)
+        super().__init__(specialization, parcel)
+        super().__init__(id_code)
         self.patient = patient
         self.doctor = doctor
         self.fatture = 0

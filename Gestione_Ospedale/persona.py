@@ -38,10 +38,12 @@ class Persona:
         self.first_name = first_name
         self.last_name = last_name
         self.age = 0
-        if not isinstance(first_name, str, last_name, str):
+        if not isinstance(first_name, str):
             print("Il nome o il cognome inserito non è una stringa!")
             self.age = 0
-
+        if not isinstance(last_name, str):
+            print("Il nome o il cognome inserito non è una stringa!")
+            self.age = 0
 
     def setName(self, first_name: str):
         if  isinstance(first_name, str):
