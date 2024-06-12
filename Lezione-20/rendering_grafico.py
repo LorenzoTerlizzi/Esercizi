@@ -65,7 +65,7 @@ class Quadrato(Forma):
 
 q = Quadrato(4)       
 print(q.getArea())
-print(q.render())
+q.render()
 
 class Rettangolo(Forma):
     def __init__(self, lunghezza_base, lunghezza_altezza):
@@ -88,6 +88,8 @@ class Rettangolo(Forma):
         for c in range(self.lunghezza_base):   
            print("*", end=" ")
 
-r = Rettangolo(7, 5)       
+r = Rettangolo(7, 5)    
+print()   
 print(r.getArea())
-print(r.render())
+r.render()
+
